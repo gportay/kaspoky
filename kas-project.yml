@@ -11,9 +11,6 @@ machine: qemux86-64
 # The distro name as it is written into the `local.conf` of bitbake.
 distro: poky
 repos:
-  # This entry includes the repository where the config file is located
-  # to the bblayers.conf:
-  meta-custom:
   # Here we include a list of layers from the poky repository to the
   # bblayers.conf:
   poky:
