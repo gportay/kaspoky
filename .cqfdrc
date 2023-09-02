@@ -1,0 +1,9 @@
+[project]
+org=gportay
+name=kaspoky
+
+[shell]
+command="kas shell kas-project.yml"
+
+[build]
+command="kas build kas-project.yml"
