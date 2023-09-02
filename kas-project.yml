@@ -7,7 +7,7 @@ header:
   # is increased on every format change.
   version: 14
 # The machine as it is written into the `local.conf` of bitbake.
-machine: qemux86-64
+machine: raspberrypi4-64
 # The distro name as it is written into the `local.conf` of bitbake.
 distro: poky
 repos:
@@ -20,3 +20,6 @@ repos:
       meta:
       meta-poky:
       meta-yocto-bsp:
+  meta-raspberrypi:
+    url: "https://git.yoctoproject.org/git/meta-raspberrypi"
+    commit: kirkstone
