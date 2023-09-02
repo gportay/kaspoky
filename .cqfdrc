@@ -5,5 +5,8 @@ name=kaspoky
 [shell]
 command="kas shell kas-project.yml"
 
+[menu]
+command="kas menu"
+
 [build]
 command="kas build kas-project.yml"

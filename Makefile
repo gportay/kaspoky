@@ -17,9 +17,17 @@ export SSTATE_DIR
 .PHONY: all
 all: build
 
-.PHONY: build shell
-build shell:
-	$(KAS) $@ kas-project.yml
+.PHONY: build menu shell
+build menu shell:
+	$(KAS) $@
+
+build shell: .config.yaml
+.config.yaml:
+	$(KAS) menu
+
+.PHONY: mrproper
+mrproper: clean
+	rm -f .config.yaml
 
 .PHONY: clean
 clean:
