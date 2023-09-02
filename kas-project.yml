@@ -5,7 +5,7 @@ header:
   # format version this file was created for. It is used by kas to figure
   # out if it is compatible with this file. The version is an integer that
   # is increased on every format change.
-  version: 14
+  version: 12
 # The machine as it is written into the `local.conf` of bitbake.
 machine: raspberrypi4-64
 # The distro name as it is written into the `local.conf` of bitbake.
@@ -15,11 +15,11 @@ repos:
   # bblayers.conf:
   poky:
     url: "https://git.yoctoproject.org/git/poky"
-    branch: kirkstone
+    refspec: kirkstone
     layers:
       meta:
       meta-poky:
       meta-yocto-bsp:
   meta-raspberrypi:
     url: "https://git.yoctoproject.org/git/meta-raspberrypi"
-    commit: kirkstone
+    refspec: kirkstone
