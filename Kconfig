@@ -5,3 +5,20 @@ config KAS_INCLUDE_MAIN
 config KAS_BUILD_SYSTEM
 	string
 	default "openembedded"
+
+choice
+	prompt "Machine"
+	default RASPBERRYPI4_64
+
+config RASPBERRYPI4_64
+	bool "raspberrypi4-64"
+
+config QEMUX86_64
+	bool "qemux86-64"
+
+endchoice
+
+config MACHINE
+	string
+	default "raspberrypi4-64" if RASPBERRYPI4_64
+	default "qemux86-64" if QEMUX86_64
