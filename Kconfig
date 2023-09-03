@@ -1,6 +1,6 @@
 config KAS_INCLUDE_MAIN
 	string
-	default "test.yaml"
+	default "kas-project.yml"
 
 config KAS_BUILD_SYSTEM
 	string
