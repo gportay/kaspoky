@@ -5,3 +5,19 @@ config KAS_INCLUDE_MAIN
 config KAS_BUILD_SYSTEM
 	string
 	default "openembedded"
+
+choice MACHINE
+	prompt "machine"
+	default RASPBERRYPI4_64
+
+config QEMUX86_64
+	bool "qemux86-64"
+	help
+	  Machine configuration for running an x86-64 system on QEMU.
+
+config RASPBERRYPI4_64
+	bool "raspberrypi4-64"
+	help
+	  Machine configuration for the RaspberryPi 4 in 64 bits mode.
+
+endchoice
