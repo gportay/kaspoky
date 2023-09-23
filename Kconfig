@@ -22,9 +22,15 @@ config RASPBERRYPI4_64
 
 endchoice
 
+config KAS_TARGET_CHOICE
+	string
+	default "target1" if CHOICE1
+	default "target2" if CHOICE2
+
 choice LINUX_KERNEL
 	prompt "kernel"
 	default LINUX_YOCTO
+	default LINUX_YOCTO if QEMUX86_64
 	default LINUX_RASPBERRYPI if RASPBERRYPI4_64
 
 config LINUX_YOCTO
