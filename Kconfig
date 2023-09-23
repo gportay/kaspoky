@@ -30,7 +30,32 @@ choice LINUX_KERNEL
 config LINUX_YOCTO
 	bool "linux-yocto"
 
+config LINUX_STABLE
+	bool "linux-stable"
+	help
+	  These recipes follow the patch releases in each currently supported
+	  stable release series of the Linux kernel. The currently supported
+	  release series can be seen at https://www.kernel.org/.
+
+config LINUX_MAINLINE
+	bool "linux-mainline"
+	help
+	  This recipe uses AUTOREV to pull the latest commit to the master
+	  branch of the mainline Linux repository. As this branch includes
+	  release candidate (rc) kernels it is only recommended for testing and
+	  active development.
+
 config LINUX_RASPBERRYPI
 	bool "linux-raspberrypi"
 
 endchoice
+
+config KAS_INCLUDE_LINUX_STABLE
+	string
+	default "linux-stable.yml"
+	depends on LINUX_STABLE
+
+config KAS_INCLUDE_LINUX_MAINLINE
+	string
+	default "linux-mainline.yml"
+	depends on LINUX_MAINLINE

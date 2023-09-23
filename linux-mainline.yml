@@ -1,0 +1,8 @@
+header:
+  version: 11
+  includes:
+    - meta-linux-mainline.yml
+
+local_conf_header:
+  virtual/kernel: |
+    PREFERRED_PROVIDER_virtual/kernel = "linux-mainline"
